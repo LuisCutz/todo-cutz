@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useTasks } from './hooks/useTasks';
-import { ListTodo } from 'lucide-react';
 import { TasksForm } from './components/TasksForm';
 import { TasksList } from './components/TasksList';
 import { Modal } from './components/Modal';
