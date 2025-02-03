@@ -17,11 +17,11 @@ export function DeleteConfirmation({ isOpen, task, onConfirm, onCancel}) {
                 <div className="space-y-4">
                     <div className="flex items-center gap-3 text-red-400">
                         <AlertTriangle className="h-5 w-5" />
-                        <span className="text-lg font-medium">Delete task</span>
+                        <span className="text-lg font-medium">Eliminar tarea</span>
                     </div>
 
-                    <p>
-                        Are you sure you want to delete the task <span className="font-medium">"{TasksList.title}"</span>? This action cannot be undone.
+                    <p className="text-white/80">
+                        ¿Seguro que deseas eliminar la tarea <span className="font-medium">"{task.title}"</span>? Esta acción no se puede deshacer.
                     </p>
 
                     <div className="flex justify-end gap-3 pt-2">

@@ -17,7 +17,6 @@ export function useTasks() {
             {
                 ...task,
                 id: crypto.randomUUID(),
-                createdAt: Date.now(),
             },
             ...prev,
         ]);

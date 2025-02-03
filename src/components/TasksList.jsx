@@ -14,16 +14,16 @@ export function TasksList({ tasks, onToggleTask, onEditTask, onDeleteTask }) {
             {tasks.map((task) => (
                 <li
                     key={task.id}
-                    className="group flex items-start gap-3 rounded-lg boder border-secondary/20 dark:border-secondary/10 p-4 hover:bg-accent/5 dark:hover:bg-secondary/5 transition-colors"
+                    className="group flex items-start gap-3 rounded-lg boder dark:border-secondary/10 p-4 hover:bg-secondary/5 transition-colors"
                 >
                     <button
                         onClick={() => onToggleTask(task.id)}
-                        className="mt-1 text-primary/40 dark:text-white/40 hover:text-primary dark:hover:text-secondary transition-colors"
+                        className="mt-1 text-secondary hover:text-tertiary-hover transition-colors"
                     >
                         {task.completed ? (
-                            <CheckCircle className="h-5 w-5 text-secondary dark:text-tertiary" />
+                            <CheckCircle className="h-6 w-6 text-tertiary hover:text-secondary transition-colors" />
                         ) : (
-                            <Circle className="h-5 w-5" />
+                            <Circle className="h-6 w-6" />
                         )}
                     </button>
 
