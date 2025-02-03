@@ -67,7 +67,7 @@ function App() {
         <div className='mx-auto max-w-3xl'>
           <div className='rounded-xl bg-gray-800 shadow-lg overflow-hidden animate-fadeIn'>
             <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-700 p-4 sm:p-6'>
-              <div className='flex items-center gap-3 mb-4 sm:mb-0'>
+              <div className='flex items-center justify-center sm:justify-start gap-3 mb-4 sm:mb-0 w-full sm:w-auto'>
                 <div className='rounded-lg bg-gray-700/50 p-2'>
                   <img src={toDoCutzLogo} alt="toDoCutz logo" className='w-32 sm:w-40' />
                 </div>
@@ -81,7 +81,7 @@ function App() {
               </button>
             </div>
 
-            <div className='mt-4 flex gap-1 border-b border-gray-700 px-4 sm:px-6 overflow-x-auto'>
+            <div className='mt-4 flex items-center justify-center sm:justify-start gap-1 border-b border-gray-700 px-4 sm:px-6 overflow-x-auto'>
               {FILTER_TABS.map(({ value, label}) => (
                 <button
                   key={value}
