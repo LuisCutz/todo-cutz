@@ -5,11 +5,13 @@ import { Portal } from "./Portal";
 export function Modal({ isOpen, onClose, title, children }) {
     const [isClosing, setIsClosing] = useState(false);
     const [shouldRender, setShouldRender] = useState(false);
+    const [currentTitle, setCurrentTitle] = useState(title);
 
     useEffect(() => {
         if (isOpen) {
             setIsClosing(false);
             setShouldRender(true);
+            setCurrentTitle(title);
             document.body.style.overflow = 'hidden';
         } else if (shouldRender) {
             setIsClosing(true);
@@ -19,7 +21,7 @@ export function Modal({ isOpen, onClose, title, children }) {
             }, 200);
             return () => clearTimeout(timer);
         }
-    }, [isOpen]);
+    }, [isOpen, title]);
 
     useEffect(() => {
         const handleEscape = (e) => {
@@ -50,7 +52,7 @@ export function Modal({ isOpen, onClose, title, children }) {
                     isClosing ? 'animate-slideUp' : 'animate-slideDown'
                 }`}>
                     <div className="flex items-center justify-between mb-4">
-                        <h2 className="text-xl font-semibold text-white">{title}</h2>
+                        <h2 className="text-xl font-semibold text-white">{currentTitle}</h2>
                         <button
                             onClick={onClose}
                             className="rounded-full p-1 hover:bg-gray-700 transition-colors"
