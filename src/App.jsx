@@ -63,32 +63,33 @@ function App() {
 
   return (
     <>
-      <div className='min-h-screen bg-gray-900'>
-        <div className='mx-auto max-w-3xl px-4 py-12'>
-          <div className='rounded-xl bg-gray-800 shadow-lg'>
-            <div className='flex items-center justify-between border-b border-gray-700 p-6'>
-              <div className='flex items-center gap-3'>
-                <div className='rounded-lg bg-gray-700/50 p-2 '>
-                  <img src={toDoCutzLogo} alt="toDoCutz logo" className='w-40' />
+      <div className='min-h-screen bg-gray-900 px-4 py-8 md:py-12'>
+        <div className='mx-auto max-w-3xl'>
+          <div className='rounded-xl bg-gray-800 shadow-lg overflow-hidden animate-fadeIn'>
+            <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-700 p-4 sm:p-6'>
+              <div className='flex items-center gap-3 mb-4 sm:mb-0'>
+                <div className='rounded-lg bg-gray-700/50 p-2'>
+                  <img src={toDoCutzLogo} alt="toDoCutz logo" className='w-32 sm:w-40' />
                 </div>
               </div>
 
               <button
                 onClick={() => setIsModalOpen(true)}
-                className='rounded-lg bg-secondary-secondary px-4 py-2 text-sm font-medium text-white hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors'
+                className='w-full sm:w-auto rounded-lg bg-secondary-secondary px-4 py-2 text-sm font-medium text-white hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:scale-105'
               >
                 Agregar tarea
               </button>
             </div>
 
-            <div className='mt-4 flex gap-1 border-b border-gray-700 px-6'>
+            <div className='mt-4 flex gap-1 border-b border-gray-700 px-4 sm:px-6 overflow-x-auto'>
               {FILTER_TABS.map(({ value, label}) => (
                 <button
                   key={value}
                   onClick={() => setActiveFilter(value)}
-                  className={`px-4 py-2 text-sm font-medium transition-colors ${activeFilter === value
-                    ? 'border-b-2 border-secondary text-secondary'
-                    : 'text-gray-400 hover:text-white'
+                  className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                    activeFilter === value
+                      ? 'border-b-2 border-secondary text-secondary'
+                      : 'text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-t-lg'
                   }`}
                 >
                   {label}
@@ -96,7 +97,7 @@ function App() {
               ))} 
             </div>
 
-            <div className='p-6'>
+            <div className='p-4 sm:p-6'>
               <TasksList
                 tasks={filteredTasks}
                 onToggleTask={toggleTask}

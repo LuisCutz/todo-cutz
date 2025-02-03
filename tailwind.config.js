@@ -23,9 +23,32 @@ export default {
           DEFAULT: '#DCCAE3', // Thistle
           hover: '#d0b9da',
         }
+      },
+      keyframes: {
+        slideDown: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        },
+        slideUp: {
+          '0%': { opacity: '1', transform: 'translateY(0)' },
+          '100%': { opacity: '0', transform: 'translateY(-10px)' }
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        },
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' }
+        }
+      },
+      animation: {
+        slideDown: 'slideDown 0.2s ease-out',
+        slideUp: 'slideUp 0.2s ease-out',
+        fadeIn: 'fadeIn 0.2s ease-out',
+        fadeOut: 'fadeOut 0.2s ease-out'
       }
     },
   },
   plugins: [],
 }
-
